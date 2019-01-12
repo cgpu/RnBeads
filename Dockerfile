@@ -10,7 +10,7 @@
 # Base Image:       R
 #################################################################
 
-FROM r.base:3.5.1
+FROM r-base:3.5.1
 
 RUN apt-get update && apt-get install -y \
     r-cran-xml \
