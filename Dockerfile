@@ -19,6 +19,10 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev
 ENV PATH=pkg-config:$PATH
 
+RUN install2.r --error --deps TRUE \
+    doParallel \
+    && rm -rf /tmp/downloaded_packages/
+
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");biocLite("Biobase");biocLite("biomaRt");biocLite("RnBeads");biocLite("RnBeads.hg38")'
 
 ##That's all for the moment
