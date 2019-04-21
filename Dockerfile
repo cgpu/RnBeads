@@ -1,8 +1,9 @@
 #################################################################
 # Dockerfile
 #
-# Version:          1
-# Date              110118
+# Version:          1.1
+# Date              210419
+# Update            added ghostscript
 # Software:         R
 # Description:      RnBeads bioconductor's package 
 # Website:          https://hub.docker.com/r/lnonell/rnbeads
@@ -17,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libcurl4-openssl-dev \
     libxml2-dev
+    ghostscript
 ENV PATH=pkg-config:$PATH
 
 RUN install2.r --error --deps TRUE \
