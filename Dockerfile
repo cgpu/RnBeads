@@ -3,7 +3,7 @@
 #
 # Version:          1.1
 # Date              210419
-# Update            added ghostscript
+# Update            added ghostscript, added tidyverse as base
 # Software:         R
 # Description:      RnBeads bioconductor's package 
 # Website:          https://hub.docker.com/r/lnonell/rnbeads
@@ -11,7 +11,7 @@
 # Base Image:       R
 #################################################################
 
-FROM r-base:3.5.1
+FROM rocker/tidyverse3.5.3
 
 RUN apt-get update && apt-get install -y \
     r-cran-xml \
@@ -27,4 +27,3 @@ RUN install2.r --error --deps TRUE \
 
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");biocLite("Biobase");biocLite("biomaRt");biocLite("RnBeads");biocLite("RnBeads.hg38")'
 
-##That's all for the moment
