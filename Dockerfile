@@ -11,7 +11,7 @@
 # Base Image:       R
 #################################################################
 
-FROM rocker/rstudio:3.5.3
+FROM rocker/rstudio:3.5.1
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
